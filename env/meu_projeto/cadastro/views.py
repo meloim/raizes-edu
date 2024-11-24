@@ -3,7 +3,8 @@ from .models import Usuario
 from .forms import UsuarioForm
 
 
-def listar_Usuario(request):
+
+def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return render(request, 'cadastro/listar_usuarios.html',{'usuarios': usuarios})
 
@@ -13,9 +14,9 @@ def criar_usuario(request):
         if form.is_valid():
             form.save()
             return redirect('listar_usuario')
-        else:
-            form = UsuarioForm()
-            return render(request, 'cadastro/criar_usuario.html',{'form': form})
+    else:
+        form = UsuarioForm()
+        return render(request, 'cadastro/criar_usuario.html',{'form': form})
 
 
 def editar_usuario(request, pk):

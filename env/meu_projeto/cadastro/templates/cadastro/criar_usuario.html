@@ -1,0 +1,121 @@
+{% extends "cadastro/base.html" %}
+
+{% block title %}Formulário de Usuário{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Editar{% else %}Novo{% endif %} Usuário</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Campo Nome -->
+        <div class="form-group">
+            <label for="id_nome">Nome</label>
+            {{ form.nome }}
+            <small class="form-text text-muted">Digite o nome completo do usuário.</small>
+        </div>
+
+        <!-- Campo Data de Nascimento -->
+        <div class="form-group">
+            <label for="id_data_nascimento">Data de Nascimento</label>
+            {{ form.data_nascimento }}
+            <small class="form-text text-muted">Informe a data de nascimento no formato YYYY-MM-DD.</small>
+        </div>
+
+        <!-- Campo CPF -->
+        <div class="form-group">
+            <label for="id_cpf">CPF</label>
+            {{ form.cpf }}
+            <small class="form-text text-muted">Digite o CPF sem pontos ou traços.</small>
+        </div>
+
+        <!-- Campo Email -->
+        <div class="form-group">
+            <label for="id_email">Email</label>
+            {{ form.email }}
+            <small class="form-text text-muted">Informe um email válido.</small>
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="form-group">
+            <label for="id_password">Senha</label>
+            {{ form.password }}
+            <small class="form-text text-muted">Escolha uma senha segura.</small>
+        </div>
+
+        <!-- Campo CEP -->
+        <div class="form-group">
+            <label for="id_cep">CEP</label>
+            {{ form.cep }}
+            <small class="form-text text-muted">Informe o CEP no formato XXXXX-XXX.</small>
+        </div>
+
+        <!-- Campo UF -->
+        <div class="form-group">
+            <label for="id_uf">UF</label>
+            {{ form.uf }}
+            <small class="form-text text-muted">Digite a sigla da sua unidade federativa (ex: SP, RJ).</small>
+        </div>
+
+        <!-- Campo Bairro -->
+        <div class="form-group">
+            <label for="id_bairro">Bairro</label>
+            {{ form.bairro }}
+            <small class="form-text text-muted">Informe o bairro onde reside o usuário.</small>
+        </div>
+
+        <!-- Campo Rua -->
+        <div class="form-group">
+            <label for="id_rua">Rua</label>
+            {{ form.rua }}
+            <small class="form-text text-muted">Digite o nome da rua ou avenida.</small>
+        </div>
+
+        <!-- Campo Número -->
+        <div class="form-group">
+            <label for="id_numero">Número</label>
+            {{ form.numero }}
+            <small class="form-text text-muted">Número da residência ou apartamento.</small>
+        </div>
+
+        <!-- Campo Complemento -->
+        <div class="form-group">
+            <label for="id_complemento">Complemento</label>
+            {{ form.complemento }}
+            <small class="form-text text-muted">Informações adicionais, como bloco ou apto (opcional).</small>
+        </div>
+
+        <!-- Campo Telefone -->
+        <div class="form-group">
+            <label for="id_telefone">Telefone</label>
+            {{ form.telefone }}
+            <small class="form-text text-muted">Telefone fixo ou celular (opcional).</small>
+        </div>
+
+        <!-- Campos Booleanos (Instituição, Aluno, Professor) -->
+        <div class="form-group">
+            <label for="id_instituicao">É Instituição?</label>
+            {{ form.instituicao }}
+            <small class="form-text text-muted">Marque se o usuário for uma instituição.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="id_aluno">É Aluno?</label>
+            {{ form.aluno }}
+            <small class="form-text text-muted">Marque se o usuário for um aluno.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="id_professor">É Professor?</label>
+            {{ form.professor }}
+            <small class="form-text text-muted">Marque se o usuário for um professor.</small>
+        </div>
+
+        <!-- Botão de Enviar -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+
+    <!-- Link para cancelar e voltar à lista -->
+    <a href="{% url 'listar_usuarios' %}" class="btn btn-secondary">Cancelar</a>
+{% endblock %}
