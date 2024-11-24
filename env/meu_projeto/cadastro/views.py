@@ -4,6 +4,10 @@ from .forms import UsuarioForm
 
 
 
+def base(request):
+    return render(request, 'cadastro/base.html')
+
+
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return render(request, 'cadastro/listar_usuarios.html',{'usuarios': usuarios})
