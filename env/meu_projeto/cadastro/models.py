@@ -13,15 +13,10 @@ class Usuario(models.Model):
     numero = models.CharField(max_length=10)
     complemento = models.CharField(max_length=100, blank=True, null=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
-    instituicao = models.BooleanField(default=False)
-    liderComunitario = models.BooleanField(default=False)
-    aluno = models.BooleanField(default=False)
-    professor = models.BooleanField(default=False)
+    tipoUsuario = models.CharField(max_length=20)
+  
     
-    class Meta:
-        abstract: Usuario
-        
-    
+
     
     
     
