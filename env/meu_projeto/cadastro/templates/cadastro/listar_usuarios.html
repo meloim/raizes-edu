@@ -1,4 +1,4 @@
-{% extends "cadastro/base.html" %}
+
 
 {% block title %}Listagem de Clientes{% endblock %}
 
@@ -10,6 +10,11 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>CEP</th>
+                <th>Rua</th>
+                <th>Bairro</th>
+                <th>UF</th>
+                <th>Complemento</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -19,8 +24,13 @@
                 <td>{{ usuario.id }}</td>
                 <td>{{ usuario.nome }}</td>
                 <td>{{ usuario.email }}</td>
+                <td>{{ usuario.cep }}</td>
+                <td>{{ usuario.rua }}</td>
+                <td>{{ usuario.bairro }}</td>
+                <td>{{ usuario.uf }}</td>
+                <td>{{ usuario.complemento }}</td>
                 <td>
-                    <a href="{% url 'editar_usuarios' usuario.id %}" class="btn btn-editar">Editar</a>
+                    <a href="{% url 'editar_usuario' usuario.id %}" class="btn btn-editar">Editar</a>
                     <a href="{% url 'excluir_usuario' usuario.id %}" class="btn btn-excluir">Excluir</a>
                 </td>
             </tr>

@@ -1,10 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes da Educação</title>
+  
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
 
 
-{% block title %}Formulário de Usuário{% endblock %}
+    
+</head>
+<body>
 
+
+
+{% block title %}{% endblock %}
 
 {% block content %}
-    <h1>{% if form.instance.pk %}Editar{% else %}Novo{% endif %} Usuário</h1>
+    <h1>{% if form.instance.pk %}{% else %}{% endif %} </h1>
     <form method="post">
         {% csrf_token %}
 
@@ -13,83 +28,72 @@
         <div class="form-group">
             <label for="id_nome">Nome: </label>
             {{ form.nome }}
-            
         </div>
 
         <!-- Campo Data de Nascimento -->
         <div class="form-group">
-            <label for="id_data_nascimento">Data de Nascimento</label>
+            <label for="id_data_nascimento">Data de Nascimento:</label>
             {{ form.data_nascimento }}
-            
         </div>
 
         <!-- Campo CPF -->
         <div class="form-group">
-            <label for="id_cpf">CPF</label>
+            <label for="id_cpf">CPF:</label>
             {{ form.cpf }}
         </div>
 
         <!-- Campo Email -->
         <div class="form-group">
-            <label for="id_email">Email</label>
+            <label for="id_email">Email:</label>
             {{ form.email }}
-            
         </div>
 
         <!-- Campo Senha -->
         <div class="form-group">
-            <label for="id_password">Senha</label>
+            <label for="id_password">Senha:</label>
             {{ form.password }}
-           
         </div>
 
         <!-- Campo CEP -->
         <div class="form-group">
-            <label for="id_cep">CEP</label>
+            <label for="id_cep">CEP:</label>
             {{ form.cep }}
-            
         </div>
 
         <!-- Campo UF -->
         <div class="form-group">
             <label for="id_uf">UF</label>
-            {{ form.uf }}
-            
+            <input type="text" id="id_uf" name="uf" class="form-control" readonly>
         </div>
 
         <!-- Campo Bairro -->
         <div class="form-group">
-            <label for="id_bairro">Bairro</label>
-            {{ form.bairro }}
-            
+            <label for="id_bairro">Bairro:</label>
+            <input type="text" id="id_bairro" name="bairro" class="form-control" readonly>
         </div>
 
         <!-- Campo Rua -->
         <div class="form-group">
-            <label for="id_rua">Rua</label>
-            {{ form.rua }}
-          
+            <label for="id_rua">Rua:</label>
+            <input type="text" id="id_rua" name="rua" class="form-control" readonly>
         </div>
 
         <!-- Campo Número -->
         <div class="form-group">
-            <label for="id_numero">Número</label>
+            <label for="id_numero">Número:</label>
             {{ form.numero }}
-            
         </div>
 
         <!-- Campo Complemento -->
         <div class="form-group">
-            <label for="id_complemento">Complemento</label>
+            <label for="id_complemento">Complemento:</label>
             {{ form.complemento }}
-            
         </div>
 
         <!-- Campo Telefone -->
         <div class="form-group">
-            <label for="id_telefone">Telefone</label>
+            <label for="id_telefone">Telefone:</label>
             {{ form.telefone }}
-            
         </div>
 
         <!-- Campos Booleanos (Instituição, Aluno, Professor) -->
@@ -115,8 +119,12 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
+        
+    <a href="{% url 'listar_usuarios' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 
-    <!-- Link para cancelar e voltar à lista -->
-    <a href="{% url 'listar_usuarios' %}" class="btn btn-secondary">Cancelar</a>
+ 
 {% endblock %}
+</body>
+
+

@@ -17,6 +17,8 @@ class Usuario(models.Model):
     aluno = models.BooleanField(default=False)
     professor = models.BooleanField(default=False)
     
+ 
+    
     def __str__(self):
         return self.nome
     
