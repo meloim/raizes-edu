@@ -1,29 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Usuario
 from .forms import UsuarioForm
-import requests
 
-
-
-def busca_cep(cep):
-    
-    cep = ''.join(filter(str.isdigit, cep))
-
-    if len(cep) == 8: 
-        url = f'https://viacep.com.br/ws/{cep}/json/'
-        response = requests.get(url)
-
-        if response.status_code == 200:
-            dados = response.json()
-
-            if 'erro' not in dados:  # Verifica se o CEP não contém erro
-                return dados
-            else:
-                return None  # Se o CEP não for encontrado, retorna None
-        else:
-            return None  # Se a requisição falhar, retorna None
-    else:
-        return None  # Caso o CEP não tenha 8 dígitos
 
     
 
@@ -39,19 +17,6 @@ def criar_usuario(request):
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
         if form.is_valid():
-            cep = form.cleaned_data.get('cep')  
-            if cep:
-                cep = ''.join(filter(str.isdigit, cep))
-                if len(cep) == 8:
-                    dados_cep = busca_cep(cep)
-                    if dados_cep:
-                        form.instance.uf = dados_cep.get('uf', '')
-                        form.instance.bairro = dados_cep.get('bairro', '')
-                        form.instance.rua = dados_cep.get('logradouro', '')
-                        form.instance.complemento = dados_cep.get('complemento', '')
-                    else:
-                        form.add_error('cep', 'CEP não encontrado.')
-            
             form.save()
             return redirect('listar_usuario')
     else:
