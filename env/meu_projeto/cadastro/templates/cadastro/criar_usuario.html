@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes da Educação</title>
+  
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}"> 
+</head>
+<body>
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+               <a href="#"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
+            </div>
+
+            <nav class="menu-desktop">
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="#">Quem Somos</a>
+                    <a href="#">Cursos</a>
+                    <a href="#">Cadastre-se</a>
+                    <a href="#">Login</a>
+                </ul>
+            </nav>
+        </div><!--interface-->
+    </header>
+
+<main>
+<section class="form-sect">
+
+    
+    {% block title %}{% endblock %}
+    
+    {% block content %}
+    <h1>{% if form.instance.pk %}{% else %}{% endif %} </h1>
+    <form method="post">
+        {% csrf_token %}
+        
+     
+       <h2>Cadastre-se</h2>
+        <div class="form-group">
+            <label for="id_nome">Nome: </label>
+            {{ form.nome }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_data_nascimento">Data de Nascimento:</label>
+            {{ form.data_nascimento }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_cpf">CPF:</label>
+            {{ form.cpf }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </div>
+
+      
+        <div class="form-group" id="senha">
+            <label for="id_password">Senha:</label>
+            {{ form.password }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_cep">CEP:</label>
+            {{ form.cep }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_uf">UF</label>
+            <input type="text" id="id_uf" name="uf" class="form-control" readonly>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_bairro">Bairro:</label>
+            <input type="text" id="id_bairro" name="bairro" class="form-control" readonly>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_rua">Rua:</label>
+            <input type="text" id="id_rua" name="rua" class="form-control" readonly>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_numero">Número:</label>
+            {{ form.numero }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_complemento">Complemento:</label>
+            {{ form.complemento }}
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="id_telefone">Telefone:</label>
+            {{ form.telefone }}
+        </div>
+        <div class="tipo">
+            <label for="{{ form.tipoUsuario.id_for_label }}">Escolha uma opção:</label> 
+            <select name="tipoUsuario" id="id_tipoUsuario">
+                <option value="A" selected>Aluno</option>
+                <option value="B">Instituição</option>
+                <option value="C">Professor</option>
+                <option value="D">Líder Comunitário</option>
+            </select>  <!-- Gera o select para 'tipoUsuario' -->
+        </div>
+        
+  
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Cadastre-se</button>
+        </div>
+       
+    </section>
+
+    </form>
+</main>
+
+   
+
+
+    
+
+
+<footer>
+    <div class="interface">
+        <div class="flex">
+            <div> <img src="{% static 'img/plantinhafooter.png' %}" alt=""></div>
+            <div class="logo-footer"> <img src="{% static 'img/logo.png' %}" alt=""></div>
+            <div> <img src="{% static 'img/plantinhafooter.png' %}" alt=""></div>
+        </div><!--flex-->
+    </div><!--interface-->
+</footer>
+
+
+<script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/forms.js' %}"></script>
+<script src="{% static 'js/validador.js' %}"></script>
+{% endblock %}
+</body>
+</html>
+
+

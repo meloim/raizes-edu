@@ -1,0 +1,40 @@
+
+
+{% block title %}Listagem de Clientes{% endblock %}
+
+{% block content %}
+    <h1>Clientes Cadastrados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CEP</th>
+                <th>Rua</th>
+                <th>Bairro</th>
+                <th>UF</th>
+                <th>Complemento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.cep }}</td>
+                <td>{{ usuario.rua }}</td>
+                <td>{{ usuario.bairro }}</td>
+                <td>{{ usuario.uf }}</td>
+                <td>{{ usuario.complemento }}</td>
+                <td>
+                    <a href="{% url 'editar_usuario' usuario.id %}" class="btn btn-editar">Editar</a>
+                    <a href="{% url 'excluir_usuario' usuario.id %}" class="btn btn-excluir">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

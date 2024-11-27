@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes da Educação</title>
+    
+    {% load static %}
+    <!-- Usando a tag Django static para o favicon -->
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <!-- Usando a tag Django static para o CSS -->
+    <link rel="stylesheet" href="{% static 'cadastro/style.css' %}">
+</head>
+<body>
+    <header class="superfície">
+        <div class="interface">
+            <div class="logo">
+               <a href="#"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
+            </div>
+
+            <nav class="menu-desktop">
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="#">Quem Somos</a>
+                    <a href="#">Cursos</a>
+                    <a href="#">Cadastre-se</a>
+                    <a href="#">Login</a>
+                </ul>
+            </nav>
+        </div><!--interface-->
+    </header>
+    
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+
+                    <div class="txt-topo-site">
+                        <div class="pincel">
+                            <!-- Usando a tag Django static para as imagens -->
+                            <img src="{% static 'img/pincelhome.png' %}" alt="">
+                        </div>
+
+                        <div class="arvores">
+                            <img src="{% static 'img/arvores.png' %}" alt="">
+                        </div>
+                        <div class="letreirohome">
+                            <img src="{% static 'img/efeitoletreiro.png' %}" alt="">
+                            <p>Educação Muda vidas, se inscreva no nosso site para você mudar sua vida através da educação.</p>
+                            <button><a href="#">Cadastre-se</a></button>
+                        </div>
+                    </div>
+                    <div class="detalhe">
+                        <img src="{% static 'img/detalhehome1.png' %}" alt="">
+                    </div>
+
+                    <div class="img-topo-site">
+                        <img src="{% static 'img/home.png' %}" alt="">
+                    </div>
+
+                </div><!--flex-->
+            </div><!--interface-->
+        </section>
+
+        <section class="missao-visao-valores">
+            <div class="interface">
+                <!-- Usando a tag Django static para a imagem -->
+                <img class="logo1" src="{% static 'img/LogoSessaoMissaoValores.png' %}" alt="">
+            
+            <div class="flex">
+
+                <div class="box">
+
+                <div class="card1">
+                    <h2>Valores: </h2>
+                    <i> <img src="{% static 'img/flag-fill.svg' %}" alt=""></i>
+                    <p>Transparência, equidade, respeito, compromisso, hospitalidade, ética, qualidade!</p>
+                    <img class="detalhe" src="{% static 'img/iconcard.png' %}" alt="">
+                    
+                </div>
+                <div class="card1">
+                    <h2>Missão: </h2>
+                    <i> <img src="{% static 'img/star-fill.svg' %}" alt=""></i>
+                    <p>Contribuir com o aprendizado e a formação de pessoas que não tiveram a oportunidade de ter uma boa educação escolar para jovens e adultos.</p>
+                    <img class="detalhe" src="{% static 'img/iconcard.png' %}" alt="">
+                </div>
+                <div class="card1">
+                    <h2>Visão: </h2>
+                    <i> <img src="{% static 'img/eye-fill.svg' %}" alt=""></i>
+                    <p>Inovar o modelo de ensino e tornar acessível um bom ensino presencial. Transformar a vida de jovens e adultos com um modelo de ensino acessível e inovador.</p>
+                    <img class="detalhe" src="{% static 'img/iconcard.png' %}" alt="">
+                </div>
+            </div>
+            </div><!--flex-->
+        </div><!--interface-->
+        </section>
+
+        <section class="quemSomos">
+            <div class="interface">
+                <h2>Quem Somos</h2>
+                <div class="flex">
+
+                    <div class="imgQuemSomos">
+                        <img src="{% static 'img/imgquemsomos.png' %}" alt="">
+                    </div>
+                    <div class="txt-quem-somos">
+                        <p>Uma plataforma que conecta estudantes a sala de aulas com instrutores e conforto para o melhor aprendizado, levando conhecimento, capacitação e uma ótima qualidade de ensino para certificar pessoas na leitura e nos aprendizados básicos.</p>
+                        <button><a href="#">Cadastre-se</a></button>
+                    </div>
+                </div><!--flex-->
+            </div><!--interface-->
+        </section>
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="flex">
+                <div> <img src="{% static 'img/plantinhafooter.png' %}" alt=""></div>
+                <div class="logo-footer"> <img src="{% static 'img/logo.png' %}" alt=""></div>
+                <div> <img src="{% static 'img/plantinhafooter.png' %}" alt=""></div>
+            </div><!--flex-->
+        </div><!--interface-->
+    </footer>
+</body>
+</html>

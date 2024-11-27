@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka');
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+
+}
+
+:root{
+    --cor-de-fundo:#FFF1E2;
+    --Menu-color: #87BA91;
+    --fonte-de-titulo:Fredoka;
+
+    --fonte-de-texto:Lato;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+.flex{
+    display: flex;
+
+}
+header{
+    padding: 5px 1%;
+    background: var(--Menu-color);
+
+}
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--fonte-de-texto);
+    display: inline-block;
+    transition: .2s;
+    letter-spacing:1.2px;
+    padding: 0 40px;
+
+}
+.menu-desktop a:hover{
+    color: #FFF1E2;
+    transform: scale(1.05);
+
+}
+.logo a:hover{
+    transform: scale(1.05);
+}
+
+main{
+    background: #FFF9F3;
+    padding: 10px 10px 20px 10px;
+
+}
+
+.form-sect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+input:invalid {
+    border: 2px solid red;
+}
+
+img{
+ width: 100px;
+ height: 100px;}
+
+ .form-group{
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    padding: 10px;
+   
+  
+ 
+ }
+
+ h2{
+    font-size: 35px;
+    font-family: var(--fonte-de-titulo);
+    text-align: center;
+    padding: 30px;
+    letter-spacing: 1px;
+}
+ .form-group input{
+    width: 200px;
+    height: 25px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius:2px ;
+    padding: 5px;
+    
+ }
+ footer{
+    background-color: var(--Menu-color);
+
+}
+label{
+    font-size: 15px;
+    font-family: var(--fonte-de-texto);
+}
+.tipo{
+    padding: 7px;
+
+}
+button{
+    background-color: var(--Menu-color);
+    color: white;
+    border: none;
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+
+}
+button:hover{
+   background-color: #209137;
+
+    
+}
+select{
+    padding: 0px;
+    border: none;
+    
+    height: 25px;
+}
+.logo-footer img{
+    height: 200px;
+    width: 200px;
+
+}
+footer .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}

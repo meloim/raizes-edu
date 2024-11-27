@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+
+    --Menu-color: #87BA91;
+    --Home-color: #FFF9F3;
+    --sessao-missao-color:#FFF1E2;
+    --quem-somos-color:#FFFAF5;
+    --footer-color:#87BA91;
+
+
+--fonte-de-texto: Lato;
+--fonte-de-titulo: Fredoka;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    height:100vh;
+}
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+.flex{
+    display: flex;
+
+}
+h2.titulo{
+    color: black;
+    font-size: 40px;
+    text-align:center;
+    font-family: var(--fonte-de-titulo);
+    letter-spacing: 1px;
+
+}
+
+header{
+    padding: 5px 4%;
+    background: var(--Menu-color);
+
+}
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo img{
+    width: 150px;
+    height: 150px;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--fonte-de-texto);
+    display: inline-block;
+    transition: .2s;
+    letter-spacing:1.2px;
+    padding: 0 40px;
+
+}
+.menu-desktop a:hover{
+    color: #FFF1E2;
+    transform: scale(1.05);
+
+}
+.logo a:hover{
+    transform: scale(1.05);
+}
+section.topo-do-site{
+    background: var(--Home-color);
+    
+}
+
+section.topo-do-site .flex{
+    gap: 20px;
+}
+.img-topo-site img{
+    width: 350px;
+    height: 340px;
+    z-index: 99999;
+    position: relative;
+    bottom: -150px;
+    right: 240px;
+}
+.letreirohome img{
+    width: 650px;
+    z-index: 99999;
+    position: relative;
+    top: -300px;
+    left: 200px;
+
+}
+.letreirohome p{
+    font-size: 27px;
+    font-family: var(--fonte-de-texto);
+    word-spacing: 3px;
+    position: relative;
+    top:-530px ;
+    z-index: 99999;
+    width: 480px;
+    left: 280px;
+}
+
+.letreirohome button{
+    position: relative;
+    top: -510px;
+    z-index: 99999;
+    left: 600px;
+    width: 150px;
+    height: 30px;
+    background-color: var(--Menu-color);
+    border: none;
+    border-radius: 30px;
+}
+
+.letreirohome button a{
+    text-decoration: none;
+    font-family: lato;
+    color: white;
+    font-size: 15px;
+
+}
+.letreirohome button:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+    background-color:#729c7a;
+}
+.letreirohome{
+    height: 200px;
+
+}
+.pincel{
+    position: relative;
+    top: 80px;
+    left: 780px;
+}
+.missao-visao-valores{
+    background-color: var(--sessao-missao-color);
+    padding: 200px 10%;
+}
+
+
+ .missao-visao-valores .interface .logo1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    bottom: 160px;
+    
+    
+
+}
+.box{
+    display: flex;
+    gap: 3rem;
+}
+
+.card1{
+    display: flex;
+
+    flex-direction: column;
+    background-color: #ffffff88;
+    gap: rem;
+    border: 2px ;
+    border-radius: 30px;
+    padding: 2rem;
+}
+.card1 h2{
+    font-size: 25px;
+    font-family: var(--fonte-de-texto);
+}
+
+.card1 p{
+    font-size: 18px;
+    font-family: var(--fonte-de-texto);
+    word-spacing: 1px;
+    letter-spacing: 1px;
+
+}
+
+.card1 .detalhe{
+    margin-left: auto;
+    height: 40px;
+    width: 50px;
+    
+  
+}
+.card1 i{
+    font-size: 25px;
+    margin-left: auto;
+    position: relative;
+    bottom: 30px;
+}
+.quemSomos{
+    background-color: var(--quem-somos-color);
+
+}
+.quemSomos h2{
+    position: relative;
+    font-size: 25px;
+    font-family: var(--fonte-de-titulo);
+    letter-spacing: 1px;
+    text-align: center;
+    top: 30px;
+    right: 20px;
+
+}
+
+.quemSomos p{
+    font-size: 18px;
+    font-family: var(--fonte-de-texto);
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    
+}
+.txt-quem-somos{
+    margin-bottom: 150px;
+    align-content: center;
+}
+
+.txt-quem-somos button{
+    
+    margin-top: 30px;
+    color: white;
+    width: 150px;
+    height: 30px;
+    background-color: var(--Menu-color);
+    border: none;
+    border-radius: 30px;
+    
+}
+
+.txt-quem-somos button:hover{
+    
+    transform: scale(1.2);
+    transition: 0.5s;
+    background-color:#729c7a;
+
+    }
+
+footer{
+    background-color: var(--footer-color);
+
+}
+.logo-footer img{
+    height: 200px;
+
+}
+footer .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
