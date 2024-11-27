@@ -135,6 +135,13 @@ else:
     EMAIL_HOST_USER = config('EMAIL_USE_TLS')
     EMAIL_PORT = config('EMAIL_PORT')
     EMAIL_HOST = config('EMAIL_HOST')
+    
+# Configuração do Celery
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
 
         
 
