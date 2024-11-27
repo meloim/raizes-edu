@@ -41,7 +41,7 @@
         {% csrf_token %}
         
      
-        <a href="#"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
+       <h2>Cadastre-se</h2>
         <div class="form-group">
             <label for="id_nome">Nome: </label>
             {{ form.nome }}
@@ -66,7 +66,7 @@
         </div>
 
       
-        <div class="form-group">
+        <div class="form-group" id="senha">
             <label for="id_password">Senha:</label>
             {{ form.password }}
         </div>
@@ -112,42 +112,31 @@
             <label for="id_telefone">Telefone:</label>
             {{ form.telefone }}
         </div>
-        
-        <div class="form-group">
-            <label for="id_instituicao">É Instituição?</label>
-            {{ form.instituicao }}
-            <small class="form-text text-muted"> instituição.</small>
+        <div class="tipo">
+            <label for="{{ form.tipoUsuario.id_for_label }}">Escolha uma opção:</label> 
+            <select name="tipoUsuario" id="id_tipoUsuario">
+                <option value="A" selected>Aluno</option>
+                <option value="B">Instituição</option>
+                <option value="C">Professor</option>
+                <option value="D">Líder Comunitário</option>
+            </select>  <!-- Gera o select para 'tipoUsuario' -->
         </div>
         
+  
         <div class="form-group">
-            <label for="id_aluno">É Aluno?</label>
-            {{ form.aluno }}
-            <small class="form-text text-muted"> aluno.</small>
+            <button type="submit" class="btn btn-primary">Cadastre-se</button>
         </div>
-
-        <div class="form-group">
-            <label for="id_professor">É Professor?</label>
-            {{ form.professor }}
-            <small class="form-text text-muted"> professor.</small>
-        </div>
-        
-        
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        </div>
-        
-        <a href="{% url 'listar_usuarios' %}" class="btn btn-secondary">Cancelar</a>
-        
+       
     </section>
 
     </form>
 </main>
 
-    <script src="{% static 'js/ajax.js' %}"></script>
+   
 
 
     
-{% endblock %}
+
 
 <footer>
     <div class="interface">
@@ -158,6 +147,13 @@
         </div><!--flex-->
     </div><!--interface-->
 </footer>
+
+
+<script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/forms.js' %}"></script>
+<script src="{% static 'js/validador.js' %}"></script>
+{% endblock %}
 </body>
+</html>
 
 
