@@ -1,10 +1,27 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Usuario
 from .forms import UsuarioForm
+from django.contrib import messages
 
 
 def homelider(request):
     return render(request, 'home.html')
+
+'''def login(request):
+    return render(request, 'login.html')'''
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        try:
+            usuario = Usuario.objects.get(username=username, password=password)
+            messages.success(request, f'Bem-vindo, {usuario.username}')
+            return redirect('home')
+        except Usuario.DoesNotExist:
+            messages.error(request, 'Usuário ou senha inválidos.')
+    return render(request, 'cadastro/login.html')
 
 def base(request):
     return render(request, 'cadastro/base.html')
