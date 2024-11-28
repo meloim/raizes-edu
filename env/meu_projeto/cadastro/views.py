@@ -3,6 +3,7 @@ from .models import Usuario
 from .forms import UsuarioForm
 
 
+
 def homelider(request):
     return render(request, 'home.html')
 
@@ -13,6 +14,8 @@ def base(request):
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return render(request, 'cadastro/listar_usuarios.html',{'usuarios': usuarios})
+
+
 
 def criar_usuario(request):
     if request.method == 'POST':

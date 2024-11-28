@@ -6,3 +6,6 @@ class UsuarioForm(forms.ModelForm):
         model = Usuario
         fields = [ 'nome', 'data_nascimento', 'cpf', 'email', 'password', 'cep', 'uf', 'bairro', 'rua', 'numero',
                   'complemento', 'telefone','tipoUsuario']
+        widgets = {
+            'data_nascimento': forms.DateInput(attrs ={'type': 'date'}),
+        }
