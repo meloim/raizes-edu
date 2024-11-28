@@ -7,6 +7,7 @@ urlpatterns = [
     path('novo/', views.criar_usuario, name='criar_usuario'),
     path('editar/<int:pk>/', views.editar_usuario, name='editar_usuario'),
     path('excluir/<int:pk>/', views.excluir_usuario, name='excluir_usuario'),
+    path('home/',views.homelider, name='home_lider'),
    
 ]
    
