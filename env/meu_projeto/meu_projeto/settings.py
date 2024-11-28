@@ -125,23 +125,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Email
-
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else: 
-    DEFAULT_FROM_EMAIL = "walissonolievira1@outlook.com"
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST_USER = config('EMAIL_USE_TLS')
-    EMAIL_PORT = config('EMAIL_PORT')
-    EMAIL_HOST = config('EMAIL_HOST')
-    
-# Configuração do Celery
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-
 
         
 
