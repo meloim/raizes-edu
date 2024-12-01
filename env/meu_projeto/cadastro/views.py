@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Usuario
+from django.http import JsonResponse
 from .forms import UsuarioForm, LoginForm
 from django.contrib.auth.hashers import check_password
+from .error_handling import handle_login_error, handle_login_success
 
 def login(request):
     if request.method == 'POST':
@@ -13,11 +15,15 @@ def login(request):
                 usuario = Usuario.objects.get(email=email)
                 if check_password(password, usuario.password):
                     request.session['usuario_id'] = usuario.id
-                    return redirect('homelider')
+                    # Retorna a mensagem de sucesso como JSON
+                    return JsonResponse(handle_login_success())
                 else:
-                    form.add_error(None, 'Email ou senha incorretos')
+                    error_message = 'Email ou senha incorretos'
             except Usuario.DoesNotExist:
-                form.add_error(None, 'Email ou senha incorretos')
+                error_message = 'Email ou senha incorretos'
+            
+            # Retorna o erro como JSON
+            return JsonResponse(handle_login_error(error_message))
     else:
         form = LoginForm()
     return render(request, 'cadastro/login.html', {'form': form})
