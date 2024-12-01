@@ -3,80 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%load static%}
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}">
     <link rel="stylesheet" href="{% static 'cadastro/lider.css' %}">
     <title>Raízes da Educação</title>
 </head>
 <body>
     <header>
-        
-        <img src="{% static 'img/raizes.png' %}" alt="Logo Raízes da Educação">
-        <div class="usuario">
-            <p>Olá Seja bem-vindo(a) <span>{{ usuario.nome }}</span></p> <!-- Exibe o nome do usuário autenticado -->
-            <img src="{% static 'img/user.png' %}" alt="Usuário" class="usuario_icon">
+        <div class="interface">
+            <div class="flex">
+                <div class="logo">
+                    <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo Raízes da Educação">
+                </div>
+                <div class="usuario">
+                    <p>Olá Seja bem-vindo(a) <span>{{ usuario.nome }}</span></p> <!-- Exibe o nome do usuário autenticado -->
+                    <img class="icon" src="{% static 'img/user.png' %}" alt="Usuário" class="usuario_icon">
+                </div>
+            </div>
         </div>
     </header>
-    div.interface
-    
-    <div class="container">
-        <div class="lista_alunos">
-            <h2>Lista de Alunos</h2>
-            <ul>
-                <li>Alana Souza</li>
-                <li>Andryeli Silva</li>
-                <li>Bruna Giulia</li>
-                <li>Everlayne</li>
-                <li>Emylle</li>
-                <li>Thiago</li>
-                <li>Kauan</li>
-                <li>Ruan</li>
-                <li>Josemir</li>
-                <li>Alana Souza</li>
-                <li>Andryeli Silva</li>
-                <li>Bruna Giulia</li>
-                <li>Everlayne</li>
-                <li>Emylle</li>
-                <li>Thiago</li>
-                <li>Kauan</li>
-                <li>Ruan</li>
-                <li>Josemir</li>
-                <li>Alana Souza</li>
-                <li>Andryeli Silva</li>
-                <li>Bruna Giulia</li>
-                <li>Everlayne</li>
-                <li>Emylle</li>
-                <li>Thiago</li>
-                <li>Kauan</li>
-                <li>Ruan</li>
-                <li>Josemir</li>
-            </ul>
-            <div class="cadastrar_aluno">
-                <button>Cadastrar aluno</button>
+
+    <main>
+        <section class="lider">
+            <div class="interface">
+                <div class="flex">
+                    <div class="container">
+                        <div class="lista_professores">
+                            <h2>Lista de Alunos</h2>
+                            <ul>
+                                <li>Alana Souza</li>
+                                <li>Andryeli Silva</li>
+                                <li>Bruna Giulia</li>
+                                <li>Everlayne</li>
+                                <li>Emylle</li>
+                                <li>Thiago</li>
+                                <li>Kauan</li>
+                                <li>Ruan</li>
+                                <li>Josemir</li>
+                                <li>Alana Souza</li>
+                                <li>Andryeli Silva</li>
+                                <li>Bruna Giulia</li>
+                                <li>Everlayne</li>
+                                <li>Emylle</li>
+                                <li>Thiago</li>
+                                <li>Kauan</li>
+                                <li>Ruan</li>
+                                <li>Josemir</li>
+                                <li>Alana Souza</li>
+                                <li>Andryeli Silva</li>
+                                <li>Bruna Giulia</li>
+                                <li>Everlayne</li>
+                                <li>Emylle</li>
+                                <li>Thiago</li>
+                                <li>Kauan</li>
+                                <li>Ruan</li>
+                                <li>Josemir</li>
+                            </ul>
+                            <div class="cadastrar_aluno">
+                                <button>Cadastrar aluno</button>
+                            </div>
+                        </div>
+                        <div class="lista_professores">
+                            <h2>Lista de Professores</h2>
+                            <ul>
+                                <li>Matheus Eloim</li>
+                                <li>Guanabara</li>
+                                <li>Minerva McGonagall</li>
+                                <li>Alan Turing</li>
+                                <li>Severo Snape</li>
+                                <li>Alvo Dumbledore</li>
+                                <li>Lorde Voldemort</li>
+                                <li>Ada Lovelace</li>
+                            </ul>
+                            <div class="cadastrar_professor">
+                                <button>Cadastrar professor</button>
+                            </div>
+                        </div>
+                        <div class="funcoes" id="funcoes">
+                            <a href="#">Cadastrar professor</a>
+                            <a href="#">Cadastrar aluno</a>
+                            <a href="#">Lista de aluno</a>
+                            <a href="#">Lista de professor</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="lista_professores">
-            <h2>Lista de Professores</h2>
-            <ul>
-                <li>Matheus Eloim</li>
-                <li>Guanabara</li>
-                <li>Minerva McGonagall</li>
-                <li>Alan Turing</li>
-                <li>Severo Snape</li>
-                <li>Alvo Dumbledore</li>
-                <li>Lorde Voldemort</li>
-                <li>Ada Lovelace</li>
-            </ul>
-            <div class="cadastrar_professor">
-                <button>Cadastrar professor</button>
-            </div>
-        </div>
-        <div class="cadastro">
-            <a href="#">Cadastrar professor</a>
-            <a href="#">Cadastrar aluno</a>
-            <a href="#">Lista de aluno</a>
-            <a href="#">Lista de professor</a>
-        </div>
-    </div>
+        </section>
+    </main>
     <footer>
         &copy; 2024 Raízes da Educação. Todos os Direitos Reservados.
     </footer>

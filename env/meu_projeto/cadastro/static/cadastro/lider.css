@@ -2,167 +2,169 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka');
 
 
-html, body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #f5f5dc;
-    height: 100%;
-}
-body {
-    display: flex;
-    flex-direction: column; /* Organizar os elementos de cima para baixo */
-    min-height: 100vh; /* Garantir que o body ocupe a altura total da janela */
-}
-header {
-    background-color: #87BA91;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-.usuario {
-    display: flex;
-    font-family: Fredoka;
-    align-items: center;
-    gap: 10px; /* Espaço entre o texto e a imagem */
+:root{
+
+    --Menu-color: #87BA91;
+    --Home-color: #FFF9F3;
+    --fonte-de-texto: Lato;
+    --fonte-de-titulo: Fredoka;
+
+}
+body{
+    height:100%
 }
 
-.usuario_icon {
-    width: 50px; /* Tamanho da bolinha */
-    height: 50px;
-    border-radius: 50%; /* Deixa a imagem circular */
-    object-fit: cover; /* Ajusta a imagem para caber na bolinha */
-    border: 2px solid white; /* Adiciona uma borda branca */
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+
+
 }
-header img{
-    width: 100px;
-}
-header h1 {
-    margin: 0;
-}
-.container {
+.flex{
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
+    gap: 50rem;
+
 }
-.lista_alunos {
-    max-width: 250px;
-    width: 400px;
-    overflow-y: auto; /* Habilita a barra de rolagem vertical */
-    border: 2px solid #ccc; /* Adiciona uma borda para destacar a área */
-    text-align: left;
-    flex: 0,5;
-    margin: 10px;
-    margin-right: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
+h2.titulo{
+    color: black;
+    font-size: 40px;
+    text-align:center;
+    font-family: var(--fonte-de-titulo);
+    letter-spacing: 1px;
+
 }
-.lista_alunos h2{
-    text-align: center;
+header{
+    padding: 5px 4%;
+    background: var(--Menu-color);
+   
+
 }
-.lista_alunos ul {
-    padding: 0;
-}
-.lista_alunos li{
-    margin: 5px;
-    margin-left: 15px;
-    margin-bottom: 10px 0;
-    font-family: Lato;
-}
-.lista_professores{
-    max-width: 250px;
-    width: 400px;
-    overflow-y: auto;
-    border: 2px solid #ccc;
+header > .interface{
+    display: flex;
     align-items: center;
-    flex: 0,5;
-    margin: 10px;
-    margin-left: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
+    justify-content: space-between;
+    
+
 }
-.lista_professores h2{
-    text-align: center;
+
+.logo{
+    width: 150px;
+  
 }
-.lista_professores ul{
-    padding: 0;
+.icon{
+    width: 120px;
+    border-radius: 50px 50px 50px 50px;
+    
 }
-.lista_professores li{
-    margin: 5px;
-    margin-left: 15px;
-    margin-bottom: 10px 0;
-    font-family: Lato;
+.usuario{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
-.cadastrar_aluno {
-    text-align: center;
-    margin-top: 20px;
-}
-.cadastrar_aluno button {
-    position: sticky;
-    padding: 10px 20px;
-    background-color: #87BA91;
+.usuario p{
+    font-size: 18px;
+    font-family: var(--fonte-de-texto);
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Fredoka;
+
 }
-.cadastrar_aluno button:hover {
-    background-color: #87a88d;
+
+section{
+    background-color: var(--Home-color);
+    height: 100vh;
+    
 }
-.cadastrar_professor {
-    text-align: center;
-    margin-top: 20px;
+.flex .container{
+    display: flex;
+    gap: 20rem;
+    
 }
-.cadastrar_professor button {
-    position: sticky;
-    padding: 10px 20px;
-    background-color: #87BA91;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Fredoka;
+.funcoes{
+    width: 100vh;
+    background-color:#7CC68A ;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px 10px 10px 50px;
+    border-radius: 20px;
+    border: solid 1px black;
+    
 }
-.cadastrar_professor button:hover {
-    background-color: #87a88d;
-}
-.cadastro {
-    left: 30px;
-    bottom: 25px;
-    position: relative;
-    font-family: Fredoka;
-    width: 40px;
-    flex: 0.5;
-    align-items: right;
-    margin: 5px;
-    margin-left: 200px;
-    padding: 20px;
-    background-color: #87BA91;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.cadastro a {
-    display: block;
-    margin: 10px 0;
-    color: white;
+ .funcoes a{
     text-decoration: none;
-}
-.cadastro a:hover {
-    text-decoration: underline;
-    color: rgba(235, 234, 234, 0.745);
-}
-footer{
-    background-color: #87BA91;
     color: white;
+    font-family: var(--fonte-de-texto);
+    font-size: 15px;
+    
+
+ }
+ .funcoes a:hover{
+    color: #FFF1E2;
+    transform: scale(1.10);
+ }
+ .lista_professores {
+    background-color: #FFFFFF;
     text-align: center;
-    margin-top: auto;
     padding: 20px;
-    font-family: Fredoka;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 50px;
+    max-height: 500px; /* Define um tamanho máximo para o contêiner */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+    width: 300px; /* Define uma largura fixa para o contêiner */
+    margin: 0 auto;
+    border: solid 1px black; /* Centraliza o contêiner na página */
 }
+ .lista_professores  h2{
+   font-family: var(--fonte-de-titulo);
+   letter-spacing: 2px;
+   
+
+ }
+ .lista_professores ul li{
+    padding: 10px;
+    list-style: none;
+    font-family: var(--fonte-de-texto);
+
+ }
+ .container .lista_professores{
+    margin: auto;
+ 
+ }
+ button{
+    background-color: #7CC68A ;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+ }
+
+ #funcoes{
+    height: 100vh;
+ }
+
+ footer{
+    display: flex;
+    background-color: #7CC68A;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    margin: auto;
+ }
+
+
+
+
+
+
+
+
+
