@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raízes da Educação</title>
-  
     {% load static %}
     <link rel="icon" href="{% static 'img/logo.png' %}">
-    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}"> 
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
 </head>
 <body>
 
     <header>
         <div class="interface">
             <div class="logo">
-               <a href="#"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
+               <a href="/"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
             </div>
 
             <nav class="menu-desktop">
                 <ul>
-                    <a href="#">Home</a>
-                    <a href="#">Quem Somos</a>
-                    <a href="#">Cursos</a>
-                    <a href="#">Cadastre-se</a>
-                    <a href="#">Login</a>
+                    <a href="/">Home</a>
+                    <a href="/section#quemSomos">Quem Somos</a>
+                    <a href="">Guia</a>
+                    <a href="/novo">Cadastre-se</a>
+                    <a href="/login">Login</a>
                 </ul>
             </nav>
         </div><!--interface-->
@@ -31,17 +30,9 @@
 
 <main>
 <section class="form-sect">
-
-    
-    {% block title %}{% endblock %}
-    
-    {% block content %}
-    <h1>{% if form.instance.pk %}{% else %}{% endif %} </h1>
-    <form method="post">
-        {% csrf_token %}
-        
-     
        <h2>Cadastre-se</h2>
+       <form method="post" action="{% url 'criar_usuario'  %}">
+        {% csrf_token %}
         <div class="form-group">
             <label for="id_nome">Nome: </label>
             {{ form.nome }}
@@ -152,7 +143,7 @@
 <script src="{% static 'js/ajax.js' %}"></script>
 <script src="{% static 'js/forms.js' %}"></script>
 <script src="{% static 'js/validador.js' %}"></script>
-{% endblock %}
+
 </body>
 </html>
 

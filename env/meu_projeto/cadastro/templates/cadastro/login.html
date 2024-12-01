@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes da Educação</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cadastro/login_style.css' %}"> 
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+               <a href="/"> <img src="{% static 'img/logo.png' %}" alt="Logo da Raízes da Educação"></a>
+            </div>
+            <nav class="menu-desktop">
+                <a href="/">Home</a>
+                <a href="#">Quem Somos</a>
+                <a href="#">Blog</a>
+                <a href="/novo">Cadastre-se</a>
+                <a href="/login">Login</a>
+            </nav>
+        </div><!--interface-->
+    </header>
+    <main>
+        <div class="interface">
+            <div class="flex">
+                <div class="img">
+                    <img id="img3" class="login1" src="{% static 'img/Photo-album-bro.svg' %}" alt="Imagem ilustrativa de login">
+                </div>
+                <div class="login">
+                    <h2>Login</h2>
+                    <form method="POST" id="loginForm">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_email">Email:</label>
+                            <input type="email" name="email" id="id_email" required>
+                        </div>
+                        <div class="form-group" id="senha">
+                            <label for="id_password">Senha:</label>
+                            <input type="password" name="password" id="id_password" required>
+                        </div>
+                        <div class="form-group">
+                            <a href="/homelider"><button  type="submit" class="btn btn-primary">Entrar</button></a>
+                        </div>
+                        <div id="feedbackMessage" style="display: none; padding: 10px; color: white; margin-top: 10px; border-radius: 5px;">
+                        </div>
+                    </form>
+                    <img id="img2" src="{% static 'img/imgemlogin.png' %}" alt="Imagem de login">
+                </div>
+            </div><!--flex-->
+        </div><!--interface-->
+    </main>
+    <footer>
+        <div class="interface">
+            <div class="flex">
+                <div> <img src="{% static 'img/plantinhafooter.png' %}" alt="Planta no rodapé"></div>
+                <div class="logo-footer"> <img src="{% static 'img/logo.png' %}" alt="Logo no rodapé"></div>
+                <div> <img src="{% static 'img/plantinhafooter.png' %}" alt="Planta no rodapé"></div>
+            </div><!--flex-->
+        </div><!--interface-->
+    </footer>
+    
+    <script src="{% static 'js/forms.js' %}"></script>
+    <!--<script src="{% static 'js/validandologin.js' %}"></script>-->
+
+    
+   
+</body>
+</html>
+   
+   
+</body>
+</html>

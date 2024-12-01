@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka');
+
+
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column; /* Organizar os elementos de cima para baixo */
+    min-height: 100vh; /* Garantir que o body ocupe a altura total da janela */
+}
+header {
+    background-color: #87BA91;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usuario {
+    display: flex;
+    font-family: Fredoka;
+    align-items: center;
+    gap: 10px; /* Espaço entre o texto e a imagem */
+}
+
+.usuario_icon {
+    width: 50px; /* Tamanho da bolinha */
+    height: 50px;
+    border-radius: 50%; /* Deixa a imagem circular */
+    object-fit: cover; /* Ajusta a imagem para caber na bolinha */
+    border: 2px solid white; /* Adiciona uma borda branca */
+}
+header img{
+    width: 100px;
+}
+header h1 {
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+.lista_alunos {
+    max-width: 250px;
+    width: 400px;
+    overflow-y: auto; /* Habilita a barra de rolagem vertical */
+    border: 2px solid #ccc; /* Adiciona uma borda para destacar a área */
+    text-align: left;
+    flex: 0,5;
+    margin: 10px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.lista_alunos h2{
+    text-align: center;
+}
+.lista_alunos ul {
+    padding: 0;
+}
+.lista_alunos li{
+    margin: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px 0;
+    font-family: Lato;
+}
+.lista_professores{
+    max-width: 250px;
+    width: 400px;
+    overflow-y: auto;
+    border: 2px solid #ccc;
+    align-items: center;
+    flex: 0,5;
+    margin: 10px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.lista_professores h2{
+    text-align: center;
+}
+.lista_professores ul{
+    padding: 0;
+}
+.lista_professores li{
+    margin: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px 0;
+    font-family: Lato;
+}
+.cadastrar_aluno {
+    text-align: center;
+    margin-top: 20px;
+}
+.cadastrar_aluno button {
+    position: sticky;
+    padding: 10px 20px;
+    background-color: #87BA91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Fredoka;
+}
+.cadastrar_aluno button:hover {
+    background-color: #87a88d;
+}
+.cadastrar_professor {
+    text-align: center;
+    margin-top: 20px;
+}
+.cadastrar_professor button {
+    position: sticky;
+    padding: 10px 20px;
+    background-color: #87BA91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Fredoka;
+}
+.cadastrar_professor button:hover {
+    background-color: #87a88d;
+}
+.cadastro {
+    left: 30px;
+    bottom: 25px;
+    position: relative;
+    font-family: Fredoka;
+    width: 40px;
+    flex: 0.5;
+    align-items: right;
+    margin: 5px;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: #87BA91;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.cadastro a {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+}
+.cadastro a:hover {
+    text-decoration: underline;
+    color: rgba(235, 234, 234, 0.745);
+}
+footer{
+    background-color: #87BA91;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+    font-family: Fredoka;
+}
