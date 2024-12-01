@@ -8,4 +8,10 @@ class UsuarioForm(forms.ModelForm):
                   'complemento', 'telefone','tipoUsuario']
         widgets = {
             'data_nascimento': forms.DateInput(attrs ={'type': 'date'}),
+            'password': forms.PasswordInput(),
         }
+        
+class LoginForm(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput())
+        
