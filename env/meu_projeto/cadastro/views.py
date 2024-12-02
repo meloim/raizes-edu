@@ -36,7 +36,8 @@ def homelider(request):
     return render(request, 'cadastro/homelider.html', {'usuario': usuario})
         
 
-
+def criar_turmas(request):
+    return render(request, 'cadastro/criar_turmas.html')
 
         
 def base(request):

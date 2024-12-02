@@ -28,7 +28,7 @@ body{
 }
 .flex{
     display: flex;
-    gap: 50rem;
+    gap: 2rem;
 
 }
 h2.titulo{
@@ -48,7 +48,8 @@ header{
 header > .interface{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
+    
     
 
 }
@@ -81,7 +82,7 @@ section{
 }
 .flex .container{
     display: flex;
-    gap: 20rem;
+    gap: 2rem;
     
 }
 .funcoes{
@@ -92,7 +93,6 @@ section{
     gap: 1rem;
     padding: 10px 10px 10px 50px;
     border-radius: 20px;
-    border: solid 1px black;
     
 }
  .funcoes a{
@@ -100,7 +100,6 @@ section{
     color: white;
     font-family: var(--fonte-de-texto);
     font-size: 15px;
-    
 
  }
  .funcoes a:hover{
@@ -115,11 +114,10 @@ section{
     flex-direction: column;
     gap: 2rem;
     border-radius: 50px;
-    max-height: 500px; /* Define um tamanho máximo para o contêiner */
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
-    width: 300px; /* Define uma largura fixa para o contêiner */
-    margin: 0 auto;
-    border: solid 1px black; /* Centraliza o contêiner na página */
+    max-height: 400px; 
+    overflow-y: auto; 
+    width: 300px; 
+    margin: 0 auto; 
 }
  .lista_professores  h2{
    font-family: var(--fonte-de-titulo);
@@ -147,16 +145,6 @@ section{
 
  #funcoes{
     height: 100vh;
- }
-
- footer{
-    display: flex;
-    background-color: #7CC68A;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin: auto;
  }
 
 

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="icon" href="{% static 'img/logo.png' %}">
-    <link rel="stylesheet" href="{% static 'cadastro/lider.css' %}">
+    <link rel="stylesheet" href="{% static 'cadastro/criar_turmas.css' %}">
     <title>Raízes da Educação</title>
 </head>
 <body>
@@ -13,7 +12,7 @@
         <div class="interface">
             <div class="flex">
                 <div class="logo">
-                    <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo Raízes da Educação">
+                    <img class="logo" src="{% static 'img/raizes.png' %}" alt="Logo Raízes da Educação">
                 </div>
                 <div class="usuario">
                     <p>Olá Seja bem-vindo(a) <span>{{ usuario.nome }}</span></p> <!-- Exibe o nome do usuário autenticado -->
@@ -28,6 +27,9 @@
             <div class="interface">
                 <div class="flex">
                     <div class="container">
+                        <div class="lista_professores" id="criarTurmas">
+                            <h2>Criar turmas</h2>
+                        </div>
                         <div class="lista_professores">
                             <h2>Lista de Alunos</h2>
                             <ul>
@@ -82,8 +84,7 @@
                         <div class="funcoes" id="funcoes">
                             <a href="/novo">Cadastrar professor</a>
                             <a href="/novo">Cadastrar aluno</a>
-                            <a href="/criarturmas">Criar Turmas</a>
-                            
+                            <a href="">Logout</a>
                         </div>
                     </div>
                 </div>

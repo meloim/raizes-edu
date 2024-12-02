@@ -94,6 +94,10 @@ section.topo-do-site .flex{
     bottom: -150px;
     right: 240px;
 }
+.pincel1{
+    width: 50px;
+    height: 50px;
+}
 .letreirohome img{
     width: 650px;
     z-index: 99999;
@@ -101,6 +105,10 @@ section.topo-do-site .flex{
     top: -300px;
     left: 200px;
 
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 .letreirohome p{
     font-size: 27px;
@@ -234,13 +242,18 @@ section.topo-do-site .flex{
 .txt-quem-somos button{
     
     margin-top: 30px;
-    color: white;
+   
     width: 150px;
     height: 30px;
     background-color: var(--Menu-color);
     border: none;
     border-radius: 30px;
     
+}
+.txt-quem-somos button a{
+    color:white;
+    text-decoration: none;
+
 }
 
 .txt-quem-somos button:hover{

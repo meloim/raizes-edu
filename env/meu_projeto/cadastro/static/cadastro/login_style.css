@@ -16,9 +16,7 @@
 
 }
 
-html{
-    scroll-behavior: smooth;
-}
+
 
 .interface{
     max-width: 1280px;
@@ -64,10 +62,10 @@ nav a{
     transform: scale(1.05);
 }
 
-main{
+section{
     background: #FFF9F3;
     padding: 10px 10px 20px 10px;
-    height: 500px;
+    height: 100vh;
 }
 
 .form-sect{
@@ -149,8 +147,7 @@ select{
     height: 25px;
 }
 .logo-footer img{
-    height: 100px;
-    width: 100px;
+    
 
 }
 .interface{
@@ -175,4 +172,9 @@ select{
 }
 .flex{
     gap: 1rem;
+    padding: 100px;
+}
+footer{
+    height: 200px;
+    align-items: center;
 }
