@@ -13,6 +13,7 @@ urlpatterns = [
     path('excluir/<int:pk>/', views.excluir_usuario, name='excluir_usuario'),
     path('homelider/', views.homelider, name='homelider'),
     path('login/', views.login, name='login'),
+    path('criarturmas/',views.criar_turmas, name='criar_turmas'),
     
 
    

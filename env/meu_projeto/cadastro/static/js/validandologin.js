@@ -1,36 +1,36 @@
+// forms.js
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
 
-    fetch(form.action, {
+    const formData = new FormData(event.target);
+
+    fetch('/login/', {
         method: 'POST',
-        body: formData,
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-        },
+        body: formData
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         const feedbackMessage = document.getElementById('feedbackMessage');
-        feedbackMessage.textContent = data.message;
-        feedbackMessage.style.display = 'block';
-
-        if (data.success) {
-            feedbackMessage.style.backgroundColor = 'green';
+        
+        if (data.status === 'error') {
+            // Exibir mensagem de erro
+            feedbackMessage.textContent = data.message;
+            feedbackMessage.style.display = 'block';
+            feedbackMessage.style.backgroundColor = '#ff6347'; // Cor de fundo vermelha para erro
+        } else if (data.status === 'success') {
+            // Exibir mensagem de sucesso
+            feedbackMessage.textContent = data.message;
+            feedbackMessage.style.display = 'block';
+            feedbackMessage.style.backgroundColor = '#4caf50'; // Cor de fundo verde para sucesso
+            
+            // Redirecionar para a página homelider após 2 segundos
             setTimeout(() => {
-                window.location.href = "{% url 'homelider' %}";
-            }, 1000);
-        } else {
-            feedbackMessage.style.backgroundColor = 'red';
+                window.location.href = '/homelider/';
+            }, 2000);
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Erro:', error);
     });
 });
